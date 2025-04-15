@@ -21,6 +21,7 @@ app.get('/login', async (req, res) => {
       }
   }
   );
+  
 
   await client.connect();
 
@@ -29,7 +30,7 @@ app.get('/login', async (req, res) => {
 
   await dbo.collection("users").insertOne(userData);
 
-  console.log("1 document inserted");
+  console.log("1 user inserted");
 
   res.send("login success Username: " + req.query.username + " email: "+req.query.email);
 
